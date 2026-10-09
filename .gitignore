@@ -1,0 +1,15 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# The raw/processed extracts and the SQLite warehouse are ~110 MB in total and
+# are regenerated from scratch by `src/run_pipeline.py` (or `make`), so they are
+# deliberately not committed. Everything else under outputs/ IS committed: the
+# ten figures, the four reports and the exported tables are the deliverable.
+data/raw/
+data/processed/
+data/revenue_decline.sqlite
+
+# OS noise
+.DS_Store
+Thumbs.db

@@ -1,0 +1,2 @@
+check_name,failures
+"duplicate (invoice_id, line_id)",0

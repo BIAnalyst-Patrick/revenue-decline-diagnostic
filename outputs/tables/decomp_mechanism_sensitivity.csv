@@ -1,0 +1,4 @@
+driver,log_mean_divisia,sequential_forward,sequential_reverse,band_low,band_high,range_pct_of_effect
+customers,2458783.11,2670984.06,2261585.66,2261585.66,2670984.06,16.65
+frequency,-5530271.43,-5812520.67,-5262529.14,-5812520.67,-5262529.14,9.95
+aov,-2099624.61,-2029576.32,-2170169.45,-2170169.45,-2029576.32,6.7

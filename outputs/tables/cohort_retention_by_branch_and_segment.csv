@@ -1,0 +1,21 @@
+branch_name,customer_segment,customers,return_rate_pct
+Kisumu Lakefront,Hibernating,66,42.42
+Thika Road,Hibernating,91,42.86
+Mombasa Nyali,Hibernating,89,51.69
+Nakuru CBD,Hibernating,67,52.24
+Town Centre,Hibernating,121,53.72
+Westlands,Hibernating,108,57.41
+Mombasa Nyali,New,123,70.73
+Town Centre,At-Risk,254,71.65
+Westlands,At-Risk,197,72.08
+Nakuru CBD,New,99,72.73
+Kisumu Lakefront,New,88,73.86
+Westlands,New,154,74.68
+Thika Road,New,148,75.68
+Mombasa Nyali,At-Risk,175,76.57
+Town Centre,New,179,77.09
+Kisumu Lakefront,At-Risk,155,77.42
+Thika Road,At-Risk,183,77.6
+Nakuru CBD,At-Risk,129,78.29
+Thika Road,Regular,303,94.39
+Nakuru CBD,Regular,249,94.78

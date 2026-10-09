@@ -1,0 +1,14 @@
+branch_id,branch_name,product_id,product_name,observed_days,days_out_of_stock,availability_pct,longest_outage_days
+BR05,Mombasa Nyali,PC01,Bath Soap 800g,92,40,56.5,33
+BR05,Mombasa Nyali,PC02,Shampoo 400ml,92,36,60.9,7
+BR06,Kisumu Lakefront,PC05,Deodorant 250ml,92,2,97.8,1
+BR01,Town Centre,PC01,Bath Soap 800g,92,1,98.9,1
+BR01,Town Centre,PC03,Body Lotion 400ml,92,1,98.9,1
+BR02,Westlands,PC03,Body Lotion 400ml,92,1,98.9,1
+BR02,Westlands,PC04,Toothpaste 150ml,92,1,98.9,1
+BR02,Westlands,PC06,Sanitary Pads 10pk,92,1,98.9,1
+BR03,Thika Road,PC01,Bath Soap 800g,92,1,98.9,1
+BR05,Mombasa Nyali,PC03,Body Lotion 400ml,92,1,98.9,1
+BR05,Mombasa Nyali,PC04,Toothpaste 150ml,92,1,98.9,1
+BR06,Kisumu Lakefront,PC01,Bath Soap 800g,92,1,98.9,1
+BR06,Kisumu Lakefront,PC03,Body Lotion 400ml,92,1,98.9,1

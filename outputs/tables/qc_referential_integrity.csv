@@ -1,0 +1,5 @@
+fk,failures
+fact -> dim_branch,0
+fact -> dim_date,0
+fact -> dim_product,0
+fact -> dim_customer (excl. UNKNOWN),0

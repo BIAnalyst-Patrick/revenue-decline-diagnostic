@@ -1,0 +1,405 @@
+{
+  "company": "Mavuno Home & Care",
+  "base_period": "Q3 2025",
+  "current_period": "Q3 2026",
+  "currency": "KSh",
+  "headline": {
+    "revenue_2025": 48863269.61,
+    "revenue_2026": 43654913.24,
+    "revenue_delta": -5208356.369999997,
+    "revenue_yoy_pct": -10.659041876587994,
+    "gross_profit_delta": -1631355.3200000003,
+    "gross_margin_pp_change": -1.379999999999999
+  },
+  "mechanism": {
+    "customers_2025": 5265.0,
+    "customers_2026": 5555.0,
+    "customers_yoy_pct": 5.508072174738832,
+    "orders_2025": 28618.0,
+    "orders_2026": 26764.0,
+    "frequency_2025": 5.435517568850902,
+    "frequency_2026": 4.818001800180018,
+    "frequency_yoy_pct": -11.360753798491174,
+    "aov_2025": 1694.4641907191278,
+    "aov_2026": 1618.6318666865939,
+    "aov_yoy_pct": -4.4752981177106355,
+    "revenue_attributed_2025": 48492176.21,
+    "revenue_attributed_2026": 43321063.28,
+    "revenue_attributed_delta": -5171112.93,
+    "revenue_attributed_yoy_pct": -10.663808750520909,
+    "ldi": {
+      "customers": 2458783.11209658,
+      "frequency": -5530271.427804745,
+      "aov": -2099624.614291876
+    },
+    "sequential_forward": {
+      "customers": 2670984.0647483394,
+      "frequency": -5812520.674341604,
+      "aov": -2029576.320406735
+    },
+    "sequential_reverse": {
+      "aov": -2170169.449163057,
+      "frequency": -5262529.142619126,
+      "customers": 2261585.6617821828
+    },
+    "lines_per_order_2025": 3.588,
+    "lines_per_order_2026": 3.401,
+    "units_per_order_2025": 5.703,
+    "units_per_order_2026": 5.393,
+    "list_price_per_unit_2025": 312.11,
+    "list_price_per_unit_2026": 325.57,
+    "net_price_per_unit_2025": 297.14,
+    "net_price_per_unit_2026": 300.13,
+    "discount_pct_2025": 4.795,
+    "discount_pct_2026": 7.816,
+    "gross_profit_2025": 9675326.75,
+    "gross_profit_2026": 8043971.43,
+    "gross_profit_yoy_pct": -16.860984255648013,
+    "gross_margin_2025": 19.95,
+    "gross_margin_2026": 18.57,
+    "revenue_total_2025": 48863269.61,
+    "revenue_total_2026": 43654913.24,
+    "revenue_total_delta": -5208356.369999997,
+    "revenue_total_yoy_pct": -10.659041876587994
+  },
+  "structure": {
+    "branch": [
+      {
+        "slice": "Mombasa Nyali",
+        "rev_2025": 8084939.94,
+        "rev_2026": 5900988.8,
+        "delta": -2183951.14,
+        "share_of_decline_pct": 41.93167642251794,
+        "yoy_pct": -27.01,
+        "rank": 1
+      },
+      {
+        "slice": "Thika Road",
+        "rev_2025": 8053704.6,
+        "rev_2026": 6550321.01,
+        "delta": -1503383.59,
+        "share_of_decline_pct": 28.864837257670235,
+        "yoy_pct": -18.67,
+        "rank": 2
+      },
+      {
+        "slice": "Kisumu Lakefront",
+        "rev_2025": 5984246.59,
+        "rev_2026": 5296079.01,
+        "delta": -688167.58,
+        "share_of_decline_pct": 13.212759095438017,
+        "yoy_pct": -11.5,
+        "rank": 3
+      },
+      {
+        "slice": "Town Centre",
+        "rev_2025": 11240749.87,
+        "rev_2026": 10854463.67,
+        "delta": -386286.2,
+        "share_of_decline_pct": 7.416662235806269,
+        "yoy_pct": -3.44,
+        "rank": 4
+      },
+      {
+        "slice": "Westlands",
+        "rev_2025": 9248654.83,
+        "rev_2026": 8987297.68,
+        "delta": -261357.15,
+        "share_of_decline_pct": 5.0180350850301005,
+        "yoy_pct": -2.83,
+        "rank": 5
+      },
+      {
+        "slice": "Nakuru CBD",
+        "rev_2025": 6250973.78,
+        "rev_2026": 6065763.07,
+        "delta": -185210.71,
+        "share_of_decline_pct": 3.556029903537497,
+        "yoy_pct": -2.96,
+        "rank": 6
+      }
+    ],
+    "category": [
+      {
+        "slice": "Groceries",
+        "rev_2025": 12172133.9,
+        "rev_2026": 10574481.4,
+        "delta": -1597652.5,
+        "share_of_decline_pct": 30.67479232416657,
+        "yoy_pct": -13.13,
+        "rank": 1
+      },
+      {
+        "slice": "Beverages",
+        "rev_2025": 5309052.82,
+        "rev_2026": 4230402.7,
+        "delta": -1078650.12,
+        "share_of_decline_pct": 20.709990702882735,
+        "yoy_pct": -20.32,
+        "rank": 2
+      },
+      {
+        "slice": "Household & Cleaning",
+        "rev_2025": 7210779.75,
+        "rev_2026": 6393567.69,
+        "delta": -817212.06,
+        "share_of_decline_pct": 15.69040215272367,
+        "yoy_pct": -11.33,
+        "rank": 3
+      },
+      {
+        "slice": "Personal Care",
+        "rev_2025": 8183822.66,
+        "rev_2026": 7537210.64,
+        "delta": -646612.02,
+        "share_of_decline_pct": 12.414895872418967,
+        "yoy_pct": -7.9,
+        "rank": 4
+      },
+      {
+        "slice": "Baby & Kids",
+        "rev_2025": 6829219.87,
+        "rev_2026": 6370945.68,
+        "delta": -458274.19,
+        "share_of_decline_pct": 8.79882553044273,
+        "yoy_pct": -6.71,
+        "rank": 5
+      },
+      {
+        "slice": "Dairy & Eggs",
+        "rev_2025": 4581833.68,
+        "rev_2026": 4216036.68,
+        "delta": -365797.0,
+        "share_of_decline_pct": 7.023271335789954,
+        "yoy_pct": -7.98,
+        "rank": 6
+      },
+      {
+        "slice": "Fresh Produce",
+        "rev_2025": 3256582.24,
+        "rev_2026": 3103772.51,
+        "delta": -152809.73,
+        "share_of_decline_pct": 2.933933839093274,
+        "yoy_pct": -4.69,
+        "rank": 7
+      },
+      {
+        "slice": "Bakery",
+        "rev_2025": 1317400.15,
+        "rev_2026": 1226732.67,
+        "delta": -90667.48,
+        "share_of_decline_pct": 1.7408079163369548,
+        "yoy_pct": -6.88,
+        "rank": 8
+      },
+      {
+        "slice": "Unclassified",
+        "rev_2025": 2444.54,
+        "rev_2026": 1763.27,
+        "delta": -681.27,
+        "share_of_decline_pct": 0.013080326145194254,
+        "yoy_pct": -27.87,
+        "rank": 9
+      }
+    ],
+    "segment": [
+      {
+        "slice": "Loyal",
+        "rev_2025": 19894741.01,
+        "rev_2026": 16861225.61,
+        "delta": -3033515.4,
+        "share_of_decline_pct": 58.24323806782833,
+        "yoy_pct": -15.25,
+        "rank": 1
+      },
+      {
+        "slice": "Regular",
+        "rev_2025": 17968862.91,
+        "rev_2026": 15446150.01,
+        "delta": -2522712.9,
+        "share_of_decline_pct": 48.435873446194336,
+        "yoy_pct": -14.04,
+        "rank": 2
+      },
+      {
+        "slice": "At-Risk",
+        "rev_2025": 5983810.65,
+        "rev_2026": 5136404.43,
+        "delta": -847406.22,
+        "share_of_decline_pct": 16.270127460575445,
+        "yoy_pct": -14.16,
+        "rank": 3
+      },
+      {
+        "slice": "Hibernating",
+        "rev_2025": 1509313.43,
+        "rev_2026": 1465741.0,
+        "delta": -43572.43,
+        "share_of_decline_pct": 0.8365869557424317,
+        "yoy_pct": -2.89,
+        "rank": 4
+      },
+      {
+        "slice": "New",
+        "rev_2025": 3135448.21,
+        "rev_2026": 4411542.23,
+        "delta": 1276094.02,
+        "share_of_decline_pct": -24.50089681555336,
+        "yoy_pct": 40.7,
+        "rank": 5
+      }
+    ],
+    "channel": [
+      {
+        "slice": "In-store",
+        "rev_2025": 42068495.34,
+        "rev_2026": 37531098.1,
+        "delta": -4537397.24,
+        "share_of_decline_pct": 87.11764168318618,
+        "yoy_pct": -10.79,
+        "rank": 1
+      },
+      {
+        "slice": "Online",
+        "rev_2025": 6794774.27,
+        "rev_2026": 6123815.14,
+        "delta": -670959.13,
+        "share_of_decline_pct": 12.882358316813876,
+        "yoy_pct": -9.87,
+        "rank": 2
+      }
+    ]
+  },
+  "driver_partition": [
+    {
+      "driver": "Two hero Personal Care SKUs out of stock for six weeks at Mombasa Nyali; the damage spread to whole baskets",
+      "owner": "Supply Chain & Merchandising",
+      "cells_in_partition": 40,
+      "rev_2025": 8028434.429999998,
+      "rev_2026": 5870112.400000001,
+      "delta": -2158322.0299999965,
+      "pct_of_total_decline": 41.439599686992956,
+      "yoy_pct": -26.88347334487724
+    },
+    {
+      "driver": "Thika Road footfall cut for the full quarter \u2014 visits per customer well below every other store",
+      "owner": "Retail Operations (Thika Road)",
+      "cells_in_partition": 42,
+      "rev_2025": 7991856.449999998,
+      "rev_2026": 6500221.190000001,
+      "delta": -1491635.259999997,
+      "pct_of_total_decline": 28.639270319361763,
+      "yoy_pct": -18.66444010014716
+    },
+    {
+      "driver": "Residual: fewer trips per customer and slimmer baskets right across the chain",
+      "owner": "CRM / Loyalty & Assortment",
+      "cells_in_partition": 149,
+      "rev_2025": 28932387.19,
+      "rev_2026": 27959819.609999992,
+      "delta": -972567.5800000094,
+      "pct_of_total_decline": 18.673214943623563,
+      "yoy_pct": -3.361518611005454
+    },
+    {
+      "driver": "Beverage promotional depth deepened sharply outside the two affected stores",
+      "owner": "Pricing & Category Management",
+      "cells_in_partition": 20,
+      "rev_2025": 3539498.139999999,
+      "rev_2026": 2990910.0799999996,
+      "delta": -548588.0599999996,
+      "pct_of_total_decline": 10.532844164808942,
+      "yoy_pct": -15.499035125923244
+    },
+    {
+      "driver": "Reconciliation: revenue with no customer identifier (anonymous walk-ins)",
+      "owner": "Data / POS capture",
+      "cells_in_partition": 0,
+      "rev_2025": NaN,
+      "rev_2026": NaN,
+      "delta": -37243.43999999482,
+      "pct_of_total_decline": 0.7150708852127728,
+      "yoy_pct": NaN
+    }
+  ],
+  "driver_mechanism_signatures": {
+    "Mombasa Nyali": {
+      "customers_yoy_pct": 7.017543859649122,
+      "frequency_yoy_pct": -11.734581497797357,
+      "aov_yoy_pct": -22.595992063031602
+    },
+    "Thika Road": {
+      "customers_yoy_pct": 6.8888888888889,
+      "frequency_yoy_pct": -23.686486893076076,
+      "aov_yoy_pct": -0.2886504096200837
+    }
+  },
+  "cohort": {
+    "customers_2025q3": 5265.0,
+    "customers_2026q3": 5555.0,
+    "returned": 4410.0,
+    "lapsed": 855.0,
+    "new_in_2026": 1145.0,
+    "return_rate_pct": 83.76
+  },
+  "pricing": {
+    "discount_pct_2025": 4.796,
+    "discount_pct_2026": 7.817,
+    "gross_revenue_2026": 47356908.01,
+    "discount_given_2025": 2461374.89,
+    "discount_given_2026": 3701992.09,
+    "extra_discount_cost_2026": 1430652.1909820999
+  },
+  "stockout": {
+    "availability_pct_in_incident": 9.5,
+    "days_out_of_stock_in_incident": 76.0,
+    "observations_in_incident": 84.0
+  },
+  "cell_leaders": [
+    {
+      "rank": 1,
+      "cell": "Mombasa Nyali | Groceries | Regular",
+      "rev_2025": 834640.14,
+      "rev_2026": 554339.5,
+      "delta": -280300.64,
+      "pct_of_total_decline": 5.381748484311187,
+      "yoy_pct": -33.58341236739465
+    },
+    {
+      "rank": 2,
+      "cell": "Mombasa Nyali | Groceries | Loyal",
+      "rev_2025": 778388.48,
+      "rev_2026": 548388.88,
+      "delta": -229999.59999999998,
+      "pct_of_total_decline": 4.415972787975721,
+      "yoy_pct": -29.548176252557077
+    },
+    {
+      "rank": 3,
+      "cell": "Mombasa Nyali | Personal Care | Regular",
+      "rev_2025": 527166.7,
+      "rev_2026": 310431.37,
+      "delta": -216735.32999999996,
+      "pct_of_total_decline": 4.161299930403957,
+      "yoy_pct": -41.11324368553628
+    },
+    {
+      "rank": 4,
+      "cell": "Mombasa Nyali | Baby & Kids | Loyal",
+      "rev_2025": 500289.38,
+      "rev_2026": 289943.03,
+      "delta": -210346.34999999998,
+      "pct_of_total_decline": 4.0386320569688685,
+      "yoy_pct": -42.0449360727985
+    },
+    {
+      "rank": 5,
+      "cell": "Mombasa Nyali | Personal Care | Loyal",
+      "rev_2025": 526169.15,
+      "rev_2026": 337321.79,
+      "delta": -188847.36000000004,
+      "pct_of_total_decline": 3.6258532747059347,
+      "yoy_pct": -35.89099817045527
+    }
+  ]
+}
