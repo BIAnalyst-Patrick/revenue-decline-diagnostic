@@ -146,10 +146,16 @@ def render_brief(c: dict) -> list:
         ], size=9.5, space_after=5)
 
     D.h2(doc, "What we recommend — owners, impact and review dates")
+    rec = c["recovery"]
     D.data_table(doc, ["#", "Action", "Owner", "Expected gross-profit recovery", "Review"],
-                 [[a["n"], a["short"], a["owner"], a["impact"], a["review"]] for a in c["actions"]],
+                 [[a["n"], a["short"], a["owner"], a["impact"], a["review"]] for a in c["actions"]]
+                 + [["", "Total expected gross-profit recovery", "",
+                     f"{rec['low']} – {rec['high']}", ""]],
                  widths=[0.26, 3.55, 0.98, 0.88, 0.80],
                  aligns=["r", "l", "l", "r", "r"], font_size=8.3)
+    D.rich_para(doc, [(f"{rec['basis']} Together the register recovers about "
+                       f"{rec['pct_low']}-{rec['pct_high']}% of the {rec['gp_lost']} of gross "
+                       f"profit the quarter lost.", False, D.MUTED)], size=8.0, space_after=4)
     D.spacer(doc, 2)
 
     D.callout(doc,
@@ -187,12 +193,17 @@ def _brief_markdown(c: dict) -> str:
         L.append(f"### {f['n']}. {f['title']}\n")
         L.append(f"{f['body']}\n")
         L.append(f"*So what: {f['so_what']}*\n")
+    rec = c["recovery"]
     L.append("## What we recommend\n")
     L.append("| # | Action | Owner | Expected gross-profit recovery | Review |")
     L.append("|---:|---|---|---:|---|")
     for a in c["actions"]:
         L.append(f"| {a['n']} | {a['action']} | {a['owner']} | {a['impact']} | {a['review']} |")
+    L.append(f"| | **Total expected gross-profit recovery** | | **{rec['low']} – {rec['high']}** "
+             f"| vs a {rec['gp_lost']} gross-profit decline |")
     L.append("")
+    L.append(f"*{rec['basis']} Together the register recovers about {rec['pct_low']}-{rec['pct_high']}% "
+             f"of the {rec['gp_lost']} of gross profit the quarter lost.*\n")
     L.append("## What would change this conclusion\n")
     for cv in c["caveats"]:
         L.append(f"- {cv}")

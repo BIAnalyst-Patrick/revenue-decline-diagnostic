@@ -1,19 +1,49 @@
 # Mavuno Home & Care — Why Revenue Fell 10%
 
-> **Revenue fell 10%. Where did it come from?**
-> Which **branch × product × customer segment** drove the decline, and how much
-> did each contributor cost us?
->
-> **Decision it feeds:** whose plan gets rewritten next quarter — retention,
-> pricing, or merchandising?
+**Patrick Gichuki** — Business Intelligence & Data Analyst  
+[gichuki.site](https://gichuki.site) · [LinkedIn](https://www.linkedin.com/in/patrick-gichuki-the-bi-analyst) · [patrickgichuki2@gmail.com](mailto:patrickgichuki2@gmail.com)
 
-A complete diagnostic analytics project on a simulated six-store Kenyan retailer:
-raw POS extract → cleaned star schema in SQL → mechanism/structure/intersection
-decomposition → evidential 5-Whys → ranked, owned recommendations → validated
-against a known ground truth.
+> **A worked case study, not a chart pack.** A retailer lost 10.7% of its revenue.
+> I found where the money went, why it went, and who owns each fix — then graded
+> my own diagnosis against a sealed answer key (**14/14 checks pass**). Everything
+> below reproduces from a single command.
 
 **The one-line answer:** we did not lose customers — we lost trips and basket
 size, and **two of six stores carry 71% of the decline**.
+
+| | |
+|---|---|
+| **The question** | Which **branch × product × customer segment** drove the decline, and what did each contributor cost? |
+| **The decision it feeds** | Whose plan gets rewritten next quarter — retention, pricing, or merchandising? |
+| **The answer** | −10.7% revenue, −16.9% gross profit; two of six stores = 71%; four ranked problems, each with an owner, an expected gross-profit recovery and a review date |
+| **Stack** | **SQL** — 9 scripts, 696 lines: star schema, views, CTEs, joins, window functions, data-quality checks · **Python** — numpy, matplotlib, python-docx, python-pptx, sqlite3 · **Power BI** — semantic model, DAX measures, RLS and page-by-page build ([spec](docs/07_dashboard_spec.md)) |
+| **Scale** | 195,224 line items · 55,431 invoices · 6,412 customers · 39 SKUs · 6 stores · 2 like-for-like quarters |
+| **Data** | **Simulated** from a documented mechanism, so the diagnosis can be *graded* rather than merely asserted — [why that matters](#about-the-data) |
+
+![The headline waterfall — the 10% headline is three mechanisms, not one](outputs/figures/01_headline_waterfall.png)
+
+*The 10% headline is three mechanisms, not one.*
+
+## What this project is meant to demonstrate
+
+It is the piece of work I would point at first, because it shows four things a BI
+role actually asks for — roughly in order of how hard they are to fake:
+
+1. **A governing question, not a data dump.** The analysis exists to answer one
+   decision, and every table below is subordinate to it.
+2. **Decomposition, not description.** Revenue is split into customers × frequency
+   × basket size, then by store, category, segment and channel, then to the
+   intersection where the damage actually sits.
+3. **Rigour with declared limits.** Facts, hypotheses and unexplained findings are
+   separated; the why-chain stops where the data stops instead of guessing.
+4. **A deliverable a business can act on.** Four formats from one content model,
+   every action carrying an owner, an expected recovery in **gross profit**, and a
+   review date.
+
+The underlying project on a simulated six-store Kenyan retailer: raw POS extract
+→ cleaned star schema in SQL → mechanism/structure/intersection decomposition →
+evidential 5-Whys → ranked, owned recommendations → validated against a known
+ground truth.
 
 **In this report:** [The decision](#1-the-decision-this-supports) ·
 [Headline result](#2-what-happened--the-headline) ·
@@ -60,10 +90,6 @@ KSh 1.63M — worse than the revenue headline, because gross margin compressed
 | Average order value | KSh 1,694 | KSh 1,619 | **−4.5%** |
 | Lines per order | 3.59 | 3.40 | −5.2% |
 | List price per unit | KSh 312 | KSh 326 | **+4.3%** |
-
-![Headline waterfall — the 10% headline is three mechanisms, not one](outputs/figures/01_headline_waterfall.png)
-
-*The 10% headline is three mechanisms, not one.*
 
 Revenue is not profit: gross profit fell 16.9% against a 10.7% revenue fall.
 Every recommendation below is therefore priced in **gross profit**, not just
@@ -283,12 +309,25 @@ Full register with owners, expected impact and review dates:
 
 | # | Action | Owner | Expected gross-profit recovery | Review |
 |---:|---|---|---:|---|
-| 1 | Restore stock and dual-source the two hero SKUs | Supply Chain | KSh 1.51M – KSh 2.16M | +30 days |
-| 2 | Rebuild the Mombasa basket (substitutes, adjacency, staff script) | Merchandising | KSh 0.18M | +45 days |
-| 3 | Thika Road access recovery plan with the landlord and county | Retail Operations | KSh 0.89M | +60 days |
+| 1 | Restore stock and dual-source the two hero SKUs | Supply Chain | KSh 0.28M – KSh 0.40M | +30 days |
+| 2 | Rebuild the Mombasa basket (substitutes, adjacency, staff script) | Merchandising | KSh 0.03M | +45 days |
+| 3 | Thika Road access recovery plan with the landlord and county | Retail Operations | KSh 0.17M | +60 days |
 | 4 | Cap beverage discount depth back toward 4.8% | Pricing | KSh 0.27M | +21 days |
-| 5 | Convert the frequency leak: win-back + second-purchase nudge | CRM / Loyalty | KSh 0.49M | +90 days |
+| 5 | Convert the frequency leak: win-back + second-purchase nudge | CRM / Loyalty | KSh 0.09M | +90 days |
 | 6 | Capture a customer ID on every transaction; start logging supplier lead times | Data / POS | enables the next diagnosis | next quarter |
+| | **Total expected gross-profit recovery** | | **KSh 0.85M – KSh 0.97M** | vs a KSh 1.63M gross-profit decline |
+
+**Impacts are gross-profit recovery, not revenue recovered.** Volume, traffic and
+basket actions are converted at the blended Q3 2026 gross margin (18.57%); the
+pricing action is a discount stop, so clawing it back converts at near-full value
+rather than at margin. Together the register recovers **52–59% of the gross profit
+the quarter lost** — deliberately short of the whole hole, because no plan
+recovers all of it in one quarter. The pipeline asserts this cannot exceed the
+loss, so the register can never again promise more than was lost.
+
+> **These are simulated outcomes, not measured business results.** The recovery
+> figures illustrate the sizing method on a synthetic dataset; they are not
+> evidence that any of this happened in a real company.
 
 Each action has an owner, an expected impact and a review date. The follow-up
 question that closes the loop: **did any of it change a decision?**
@@ -362,6 +401,32 @@ Four formats, one source. Every number in all four comes from
 | [Deck](outputs/reports/Revenue_Decline_Diagnostic.pptx) (17 slides) | the boardroom | presented, not read; notes on every slide |
 | [Word report](outputs/reports/Revenue_Decline_Diagnostic.docx) (21 pp) | the team | the working document — editable |
 | [PDF report](outputs/reports/Revenue_Decline_Diagnostic.pdf) (21 pp) | circulation | the locked, distributable version of the Word report |
+
+## How this was built, and what was mine
+
+The pipeline is real — `make` regenerates the dataset, the warehouse, the
+analysis, the prose, the ten figures and all four documents, so the documents
+cannot drift from the data. That is an **engineering** claim, and it is worth
+keeping separate from the **analytical** claim:
+
+**The judgment calls are mine; the code executes them.** Specifically:
+
+- Choosing the **grain** (line item, not invoice) and insisting that "orders" be
+  `DISTINCTCOUNT(invoice_id)` rather than a row count.
+- Choosing **log-mean Divisia** over a sequential decomposition, then reporting
+  the sequential band beside it so a reader can see the attribution is not an
+  artefact of the order the factors are multiplied in.
+- Choosing the **one-owner partition rule** — every store × category × segment
+  cell assigned to exactly one department — so the ranked problems sum to the
+  decline with no double counting.
+- Deciding that **impacts are stated in gross profit** and converted at margin,
+  which is what stops the register promising more than the quarter lost.
+- Deciding **where to stop**: the fifth why is unanswerable in this extract, so
+  the chain ends at a data-capture recommendation rather than a plausible story.
+- Writing the **14 falsifiable checks** the diagnosis is graded against.
+
+What the pipeline removes is transcription error and drift. It does not make the
+six decisions above, and a reviewer is entitled to disagree with any of them.
 
 ## Repository layout
 

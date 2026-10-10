@@ -58,12 +58,15 @@ List price per unit rose +4.3% while discount depth went from 4.80% to 7.82% of 
 
 | # | Action | Owner | Expected gross-profit recovery | Review |
 |---:|---|---|---:|---|
-| 1 | Rebuild safety stock on the two hero Personal Care SKUs and qualify a second supplier | Supply Chain | KSh 1.51M – KSh 2.16M | 2026-11-04 (+30d) |
-| 2 | Rebuild the Mombasa basket: substitutes on shelf, Personal Care adjacent to Groceries, a substitution script for staff | Merchandising | KSh 0.18M | 2026-11-19 (+45d) |
-| 3 | Thika Road access recovery: landlord and county engagement, extended hours, local marketing to restore trips | Retail Operations | KSh 0.89M | 2026-12-04 (+60d) |
+| 1 | Rebuild safety stock on the two hero Personal Care SKUs and qualify a second supplier | Supply Chain | KSh 0.28M – KSh 0.40M | 2026-11-04 (+30d) |
+| 2 | Rebuild the Mombasa basket: substitutes on shelf, Personal Care adjacent to Groceries, a substitution script for staff | Merchandising | KSh 0.03M | 2026-11-19 (+45d) |
+| 3 | Thika Road access recovery: landlord and county engagement, extended hours, local marketing to restore trips | Retail Operations | KSh 0.17M | 2026-12-04 (+60d) |
 | 4 | Cap beverage promotional depth back toward 4.8% of gross and require an approval gate above it | Pricing & Category Management | KSh 0.27M | 2026-10-26 (+21d) |
-| 5 | Convert the frequency leak: targeted win-back for the 855 lapsed customers and a second-purchase nudge for the 1,145 new ones | CRM / Loyalty | KSh 0.49M | 2027-01-03 (+90d) |
+| 5 | Convert the frequency leak: targeted win-back for the 855 lapsed customers and a second-purchase nudge for the 1,145 new ones | CRM / Loyalty | KSh 0.09M | 2027-01-03 (+90d) |
 | 6 | Capture a customer identifier on every transaction; start logging supplier promised-vs-actual lead times | Data / POS & Supply Chain | No direct revenue; removes both blind spots | 2027-01-03 (next quarter) |
+| | **Total expected gross-profit recovery** | | **KSh 0.85M – KSh 0.97M** | vs a KSh 1.63M gross-profit decline |
+
+*Impacts are gross-profit recovery, not revenue recovered. Volume, traffic and basket actions are converted at the blended Q3 FY2026 gross margin (18.57%); the pricing action is a discount stop, so it converts at near-full value rather than at margin. The capture rates (40-100% of each slice) are deliberately conservative. Together the register recovers about 52%-59%% of the KSh 1.63M of gross profit the quarter lost.*
 
 ## What would change this conclusion
 

@@ -51,6 +51,25 @@ def n(x: float, decimals: int = 0) -> str:
 
 
 # --------------------------------------------------------------------------- #
+# How an action's value is stated                                              #
+# --------------------------------------------------------------------------- #
+# Every action recovers part of the revenue the quarter lost, but revenue is not
+# what the business keeps. The register therefore states each action in GROSS
+# PROFIT, converted from the revenue slice it recovers:
+#
+#   volume / traffic / basket recovery -> revenue recovered x blended margin
+#   discount recovery                  -> the give-away clawed back, ~1:1
+#                                         (a discount is pure margin)
+#
+# Stating these in raw revenue would overstate each action by roughly 1/margin,
+# and would let the register promise more gross profit than the quarter lost.
+def gross_profit_recovered(revenue_at_risk: float, capture: float, margin: float,
+                           full_margin: bool = False) -> float:
+    """Gross profit recovered by winning back `capture` of a lost revenue slice."""
+    return abs(revenue_at_risk) * capture * (1.0 if full_margin else margin)
+
+
+# --------------------------------------------------------------------------- #
 # Build                                                                        #
 # --------------------------------------------------------------------------- #
 def build() -> dict:
@@ -299,6 +318,15 @@ def build() -> dict:
     # ------------------------------------------------------------------ #
     # Actions and the monitoring plan                                      #
     # ------------------------------------------------------------------ #
+    # Impacts are stated in gross profit, converted from the revenue slice each
+    # action recovers; the capture rates are the conservative share of each slice
+    # we expect to get back, and they are printed so a reader can argue with them.
+    margin = m["gross_margin_2026"] / 100.0
+    gp_lost = abs(h["gross_profit_delta"])
+
+    def gp(rev_slice: float, capture: float, full_margin: bool = False) -> float:
+        return gross_profit_recovered(rev_slice, capture, margin, full_margin)
+
     actions = [
         {"n": 1,
          "short": "Rebuild safety stock on the hero SKUs; qualify a second supplier",
@@ -306,7 +334,7 @@ def build() -> dict:
          "owner": "Supply Chain",
          "why": f"Availability was {stk['availability_pct_in_incident']:.1f}% for "
                 f"{stk['days_out_of_stock_in_incident']:.0f} days; the store lost {mn(abs(mom['delta']))}",
-         "impact": f"{mn(abs(supply['delta']) * 0.7)} – {mn(abs(supply['delta']))}",
+         "impact": f"{mn(gp(supply['delta'], 0.70))} – {mn(gp(supply['delta'], 1.00))}",
          "review": "2026-11-04 (+30d)"},
         {"n": 2,
          "short": "Rebuild the Mombasa basket: substitutes, adjacency, staff script",
@@ -315,7 +343,7 @@ def build() -> dict:
          "owner": "Merchandising",
          "why": f"AOV fell {pct(sig['Mombasa Nyali']['aov_yoy_pct'])} while the category alone "
                 f"explains only {mn(abs(mom_pc_delta))} of the {mn(abs(supply['delta']))} damage",
-         "impact": mn(abs(mom_pc_delta) * 0.4),
+         "impact": mn(gp(mom_pc_delta, 0.40)),
          "review": "2026-11-19 (+45d)"},
         {"n": 3,
          "short": "Thika Road access recovery with the landlord and county",
@@ -325,7 +353,7 @@ def build() -> dict:
          "why": f"Frequency fell {pct(sig['Thika Road']['frequency_yoy_pct'])} while basket value "
                 f"held at {pct(sig['Thika Road']['aov_yoy_pct'])} — a pure traffic problem worth "
                 f"{mn(abs(ops['delta']))}",
-         "impact": mn(abs(ops["delta"]) * 0.6),
+         "impact": mn(gp(ops["delta"], 0.60)),
          "review": "2026-12-04 (+60d)"},
         {"n": 4,
          "short": f"Cap beverage discount depth; gate approvals above {pricing['discount_pct_2025']:.1f}%",
@@ -334,7 +362,7 @@ def build() -> dict:
          "owner": "Pricing & Category Management",
          "why": f"Beverage discount depth rose {pp(bev_pp)}; category revenue fell "
                 f"{pct(bev['yoy_pct'])}",
-         "impact": mn(abs(price["delta"]) * 0.5),
+         "impact": mn(gp(price["delta"], 0.50, full_margin=True)),
          "review": "2026-10-26 (+21d)"},
         {"n": 5,
          "short": "Win back lapsed customers; nudge a second purchase",
@@ -343,7 +371,7 @@ def build() -> dict:
          "owner": "CRM / Loyalty",
          "why": f"{pct(m['frequency_yoy_pct'])} trips per customer across all four established "
                 f"segments; residual pool worth {mn(abs(crm['delta']))}",
-         "impact": mn(abs(crm["delta"]) * 0.5),
+         "impact": mn(gp(crm["delta"], 0.50)),
          "review": "2027-01-03 (+90d)"},
         {"n": 6,
          "short": "Capture a customer ID on every sale; log supplier lead times",
@@ -355,6 +383,17 @@ def build() -> dict:
          "impact": "No direct revenue; removes both blind spots",
          "review": "2027-01-03 (next quarter)"},
     ]
+
+    # The register must never promise more gross profit than the quarter lost.
+    # Stating the impacts in revenue used to break this by ~2x; the assertion is
+    # what stops that drifting back in unnoticed.
+    rec_low = (gp(supply["delta"], 0.70) + gp(mom_pc_delta, 0.40) + gp(ops["delta"], 0.60)
+               + gp(price["delta"], 0.50, full_margin=True) + gp(crm["delta"], 0.50))
+    rec_high = (gp(supply["delta"], 1.00) + gp(mom_pc_delta, 0.40) + gp(ops["delta"], 0.60)
+                + gp(price["delta"], 0.50, full_margin=True) + gp(crm["delta"], 0.50))
+    assert rec_high <= gp_lost, (
+        f"action register promises {mn(rec_high)} of gross-profit recovery against a "
+        f"{mn(gp_lost)} gross-profit decline — state impacts at margin, not in revenue")
 
     monitoring = [
         {"metric": "Orders per customer", "baseline": f"{m['frequency_2025']:.2f}",
@@ -542,6 +581,17 @@ def build() -> dict:
         },
         "facts": facts,
         "run_rate": {"value": mn(run_rate), "quarter": mn(abs(h["revenue_delta"]))},
+        "recovery": {
+            "low": mn(rec_low), "high": mn(rec_high),
+            "pct_low": f"{rec_low / gp_lost * 100:.0f}%",
+            "pct_high": f"{rec_high / gp_lost * 100:.0f}%",
+            "gp_lost": mn(gp_lost),
+            "basis": "Impacts are gross-profit recovery, not revenue recovered. Volume, traffic "
+                     "and basket actions are converted at the blended Q3 FY2026 gross margin "
+                     f"({m['gross_margin_2026']:.2f}%); the pricing action is a discount stop, so it "
+                     "converts at near-full value rather than at margin. The capture rates (40-100% "
+                     "of each slice) are deliberately conservative.",
+        },
         "actions": actions,
         "monitoring": monitoring,
         "figures": figures,

@@ -219,14 +219,15 @@ Full register with owners, expected impact and review dates: [`docs/06_recommend
 
 | # | Action | Owner | Expected gross-profit recovery | Review |
 |---:|---|---|---:|---|
-| 1 | Restore stock and dual-source the two hero SKUs | Supply Chain | KSh 1.51M – KSh 2.16M | +30 days |
-| 2 | Rebuild the Mombasa basket (substitutes, adjacency, staff script) | Merchandising | KSh 0.18M | +45 days |
-| 3 | Thika Road access recovery plan with the landlord and county | Retail Operations | KSh 0.89M | +60 days |
+| 1 | Restore stock and dual-source the two hero SKUs | Supply Chain | KSh 0.28M – KSh 0.40M | +30 days |
+| 2 | Rebuild the Mombasa basket (substitutes, adjacency, staff script) | Merchandising | KSh 0.03M | +45 days |
+| 3 | Thika Road access recovery plan with the landlord and county | Retail Operations | KSh 0.17M | +60 days |
 | 4 | Cap beverage discount depth back toward 4.8% | Pricing | KSh 0.27M | +21 days |
-| 5 | Convert the frequency leak: win-back + second-purchase nudge | CRM / Loyalty | KSh 0.49M | +90 days |
+| 5 | Convert the frequency leak: win-back + second-purchase nudge | CRM / Loyalty | KSh 0.09M | +90 days |
 | 6 | Capture a customer ID on every transaction; start logging supplier lead times | Data / POS | enables the next diagnosis | next quarter |
+| | **Total expected gross-profit recovery** | | **KSh 0.85M – KSh 0.97M** | vs a KSh 1.63M gross-profit decline |
 
-Each action has an owner, an expected impact and a review date — the test from Ch. 30. The follow-up question that closes the loop: **did any of it change a decision?**
+Each action has an owner, an expected impact and a review date — the test from Ch. 30. **Impacts are gross-profit recovery, not revenue recovered:** volume, traffic and basket actions are converted at the blended Q3 FY2026 gross margin (18.57%), while the pricing action is a discount stop and converts at near-full value. Together they recover KSh 0.85M–KSh 0.97M, about 52–59% of the KSh 1.63M of gross profit the quarter lost — deliberately short of the whole hole, because no plan recovers all of it in one quarter. The follow-up question that closes the loop: **did any of it change a decision?**
 
 ---
 
