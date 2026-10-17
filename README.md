@@ -1,7 +1,7 @@
 # Mavuno Home & Care — Why Revenue Fell 10%
 
 **Patrick Gichuki** — Business Intelligence & Data Analyst  
-[gichuki.site](https://gichuki.site) · [LinkedIn](https://www.linkedin.com/in/patrick-gichuki-the-bi-analyst) · [patrickgichuki2@gmail.com](mailto:patrickgichuki2@gmail.com)
+[GitHub](https://github.com/BIAnalyst-Patrick) · [LinkedIn](https://www.linkedin.com/in/patrick-gichuki-the-bi-analyst) · [patrickgichuki2@gmail.com](mailto:patrickgichuki2@gmail.com)
 
 > **A worked case study, not a chart pack.** A retailer lost 10.7% of its revenue.
 > I found where the money went, why it went, and who owns each fix — then graded
